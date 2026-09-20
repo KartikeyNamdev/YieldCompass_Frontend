@@ -38,11 +38,13 @@ import * as mock from './mock'
 
 const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE !== 'false'
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? ''
+// Harmless for normal hosts; stops free ngrok tunnels from answering API calls with an HTML warning page.
+const BASE_HEADERS = { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' }
 
 async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
   const url = `${API_BASE}/v1${path}`
   const response = await fetch(url, {
-    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    headers: { ...BASE_HEADERS, ...options?.headers },
     ...options,
   })
   if (!response.ok) {
@@ -55,7 +57,7 @@ async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
 async function apiFetchOrNull<T>(path: string, options?: RequestInit): Promise<T | null> {
   const url = `${API_BASE}/v1${path}`
   const response = await fetch(url, {
-    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    headers: { ...BASE_HEADERS, ...options?.headers },
     ...options,
   })
   if (response.status === 404) return null
