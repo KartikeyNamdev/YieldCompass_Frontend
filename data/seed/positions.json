@@ -1,0 +1,41 @@
+{
+  "7xKp9mNz3WqRtYvLbXcFdJeGhUoQsAiMnPwElDk2Vfu": {
+    "address": "7xKp9mNz3WqRtYvLbXcFdJeGhUoQsAiMnPwElDk2Vfu",
+    "pool_positions": [
+      {
+        "protocol_id": "kamino",
+        "protocol_name": "Kamino Finance",
+        "amount_usdc": 5000,
+        "headline_apy": 9.2,
+        "realized_apy_30d": 5.8,
+        "entry_date": "2026-08-15T10:00:00Z"
+      },
+      {
+        "protocol_id": "marinade",
+        "protocol_name": "Marinade Finance",
+        "amount_usdc": 10000,
+        "headline_apy": 7.3,
+        "realized_apy_30d": 6.9,
+        "entry_date": "2026-07-01T10:00:00Z"
+      }
+    ],
+    "vault_positions": [
+      {
+        "series_id": "series-beta-2",
+        "series_name": "Beta Vault #2",
+        "tranche": "senior",
+        "principal_usdc": 25000,
+        "status": "active",
+        "claimable_usdc": 0
+      },
+      {
+        "series_id": "series-gamma-3",
+        "series_name": "Gamma Vault #3",
+        "tranche": "junior",
+        "principal_usdc": 5000,
+        "status": "settled",
+        "claimable_usdc": 5236.5
+      }
+    ]
+  }
+}

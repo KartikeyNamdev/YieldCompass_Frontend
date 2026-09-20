@@ -1,0 +1,92 @@
+{
+  "kamino": {
+    "protocol_id": "kamino",
+    "computed_at": "2026-09-20T08:30:00Z",
+    "expires_at": "2026-09-21T08:30:00Z",
+    "overall_score": 82,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 21, "label": "Smart-contract & audit quality", "notes": "Audited by OtterSec and Sec3. 2 minor findings, no critical issues." },
+      "tvl_stability": { "weight": 20, "earned": 17, "label": "TVL size & stability", "notes": "$890M TVL with low 30-day volatility (<15%)." },
+      "yield_source": { "weight": 20, "earned": 15, "label": "Yield source quality", "notes": "Mix of real lending interest (66%) and KMNO emissions (34%)." },
+      "maturity_history": { "weight": 10, "earned": 9, "label": "Maturity & incident history", "notes": "Launched 2022. No significant incidents. 2 years of clean operation." },
+      "oracle_risk": { "weight": 10, "earned": 8, "label": "Oracle & dependency risk", "notes": "Uses Pyth oracles with 4-of-7 multisig fallback." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 8, "label": "Withdrawal liquidity", "notes": "Avg withdrawal time <5 min. $50M daily exit capacity." },
+      "governance_risk": { "weight": 5, "earned": 4, "label": "Governance & admin-key risk", "notes": "Timelock on upgrades. Community governance active." }
+    }
+  },
+  "marginfi": {
+    "protocol_id": "marginfi",
+    "computed_at": "2026-09-20T08:25:00Z",
+    "expires_at": "2026-09-21T08:25:00Z",
+    "overall_score": 78,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 19, "label": "Smart-contract & audit quality", "notes": "Audited by Neodyme. Full audit report public." },
+      "tvl_stability": { "weight": 20, "earned": 16, "label": "TVL size & stability", "notes": "$620M TVL, moderate growth over 6 months." },
+      "yield_source": { "weight": 20, "earned": 18, "label": "Yield source quality", "notes": "Primarily real lending interest (88%). Low emissions share." },
+      "maturity_history": { "weight": 10, "earned": 7, "label": "Maturity & incident history", "notes": "Launched 2023. Minor liquidation edge case in Q1 2024, patched within 24h." },
+      "oracle_risk": { "weight": 10, "earned": 8, "label": "Oracle & dependency risk", "notes": "Pyth Network integration with price staleness checks." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 7, "label": "Withdrawal liquidity", "notes": "Normal withdrawal <10 min. Stress tested at $20M/day." },
+      "governance_risk": { "weight": 5, "earned": 3, "label": "Governance & admin-key risk", "notes": "Admin key with 48h timelock. Multisig controlled." }
+    }
+  },
+  "jupiter-lend": {
+    "protocol_id": "jupiter-lend",
+    "computed_at": "2026-09-20T07:45:00Z",
+    "expires_at": "2026-09-21T07:45:00Z",
+    "overall_score": 64,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 15, "label": "Smart-contract & audit quality", "notes": "One internal audit. External audit planned but not complete." },
+      "tvl_stability": { "weight": 20, "earned": 13, "label": "TVL size & stability", "notes": "$310M TVL. High 30-day volatility (>30%)." },
+      "yield_source": { "weight": 20, "earned": 9, "label": "Yield source quality", "notes": "Only 45% from real interest. 55% from JUP token emissions." },
+      "maturity_history": { "weight": 10, "earned": 6, "label": "Maturity & incident history", "notes": "Relatively new, launched mid-2024." },
+      "oracle_risk": { "weight": 10, "earned": 7, "label": "Oracle & dependency risk", "notes": "Pyth oracles. Dependency on Jupiter DEX infrastructure." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 8, "label": "Withdrawal liquidity", "notes": "Fast withdrawals typically available." },
+      "governance_risk": { "weight": 5, "earned": 3, "label": "Governance & admin-key risk", "notes": "Early governance phase, admin key active without timelock." }
+    }
+  },
+  "jito": {
+    "protocol_id": "jito",
+    "computed_at": "2026-09-20T08:35:00Z",
+    "expires_at": "2026-09-21T08:35:00Z",
+    "overall_score": 88,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 23, "label": "Smart-contract & audit quality", "notes": "Multiple audits by Neodyme, OtterSec. All critical/high issues resolved." },
+      "tvl_stability": { "weight": 20, "earned": 19, "label": "TVL size & stability", "notes": "$2.1B TVL. Extremely stable, consistent growth trajectory." },
+      "yield_source": { "weight": 20, "earned": 18, "label": "Yield source quality", "notes": "MEV-boosted staking rewards. Real economic activity (92% non-emissions)." },
+      "maturity_history": { "weight": 10, "earned": 9, "label": "Maturity & incident history", "notes": "Clean 2-year operational history. No material incidents." },
+      "oracle_risk": { "weight": 10, "earned": 9, "label": "Oracle & dependency risk", "notes": "Minimal oracle dependency; yield is based on on-chain MEV directly." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 8, "label": "Withdrawal liquidity", "notes": "JitoSOL liquid market. Instant swap available via DEX." },
+      "governance_risk": { "weight": 5, "earned": 4, "label": "Governance & admin-key risk", "notes": "Timelock + DAO governance. Active community oversight." }
+    }
+  },
+  "marinade": {
+    "protocol_id": "marinade",
+    "computed_at": "2026-09-20T08:20:00Z",
+    "expires_at": "2026-09-21T08:20:00Z",
+    "overall_score": 91,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 24, "label": "Smart-contract & audit quality", "notes": "Audited 4+ times (Kudelski, Neodyme, OtterSec). Bug bounty program active." },
+      "tvl_stability": { "weight": 20, "earned": 19, "label": "TVL size & stability", "notes": "$1.35B TVL. Consistent for 18+ months, very low volatility." },
+      "yield_source": { "weight": 20, "earned": 19, "label": "Yield source quality", "notes": "Pure staking rewards (95%). Minimal token incentives." },
+      "maturity_history": { "weight": 10, "earned": 10, "label": "Maturity & incident history", "notes": "Launched 2021. Longest track record in Solana liquid staking. Zero incidents." },
+      "oracle_risk": { "weight": 10, "earned": 9, "label": "Oracle & dependency risk", "notes": "On-chain stake pool mechanics, no external price oracles required." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 7, "label": "Withdrawal liquidity", "notes": "Unstake available via mSOL market. Epoch-based unstake (2-3 days) or instant swap." },
+      "governance_risk": { "weight": 5, "earned": 4, "label": "Governance & admin-key risk", "notes": "DAO-governed with on-chain proposals. Admin key removed from critical paths." }
+    }
+  },
+  "save": {
+    "protocol_id": "save",
+    "computed_at": "2026-09-20T06:00:00Z",
+    "expires_at": "2026-09-21T06:00:00Z",
+    "overall_score": 56,
+    "factors": {
+      "smart_contract_audit": { "weight": 25, "earned": 14, "label": "Smart-contract & audit quality", "notes": "Older Solend codebase. Last audit 2022. Significant code changes since." },
+      "tvl_stability": { "weight": 20, "earned": 10, "label": "TVL size & stability", "notes": "$185M TVL. Down 60% from 2022 peak. Continued outflows." },
+      "yield_source": { "weight": 20, "earned": 6, "label": "Yield source quality", "notes": "72% of headline APY from SLND token emissions. Real lending yield only 28%." },
+      "maturity_history": { "weight": 10, "earned": 5, "label": "Maturity & incident history", "notes": "Incident in 2022: whale account liquidation caused protocol stress. Recovered." },
+      "oracle_risk": { "weight": 10, "earned": 8, "label": "Oracle & dependency risk", "notes": "Pyth oracles. Adequate risk management." },
+      "withdrawal_liquidity": { "weight": 10, "earned": 7, "label": "Withdrawal liquidity", "notes": "Withdrawals generally available but some assets have utilization caps." },
+      "governance_risk": { "weight": 5, "earned": 3, "label": "Governance & admin-key risk", "notes": "Governance token (SLND) concentration concerns. Timelock partially applied." }
+    }
+  }
+}

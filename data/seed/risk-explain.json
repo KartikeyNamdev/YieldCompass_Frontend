@@ -1,0 +1,62 @@
+{
+  "kamino": {
+    "protocol_id": "kamino",
+    "generated_at": "2026-09-20T08:30:00Z",
+    "explanation": "Kamino Finance is a well-established Solana lending protocol with a strong track record. Its risk score of 82 reflects several positive factors: it has been audited twice by reputable firms [1] and operates with $890M in TVL that has remained stable over the past year [2]. The main area to watch is its emissions component—34% of the headline APY comes from KMNO token rewards rather than actual lending interest, which can change if token prices fall [3]. Withdrawal liquidity is strong, with the average user able to exit within 5 minutes. Overall, Kamino sits in the high-confidence band and is a reasonable base for a conservative vault strategy.",
+    "citations": [
+      { "id": 1, "label": "OtterSec Audit Report", "url": "https://github.com/otter-sec/solana-audits" },
+      { "id": 2, "label": "Kamino TVL Data (DeFiLlama)", "url": "https://defillama.com/protocol/kamino-finance" },
+      { "id": 3, "label": "Kamino Emissions Documentation", "url": "https://docs.kamino.finance/tokenomics" }
+    ]
+  },
+  "marginfi": {
+    "protocol_id": "marginfi",
+    "generated_at": "2026-09-20T08:25:00Z",
+    "explanation": "MarginFi scores 78 out of 100, placing it firmly in the moderate-to-high confidence band. The protocol stands out for having one of the lowest emissions shares among Solana lenders—only 12% of its headline APY comes from token incentives, meaning most of what it shows is real interest income [1]. It has a public audit from Neodyme [2], a respected Solana security firm. One minor incident in early 2024 involved a liquidation edge case that was patched within 24 hours [3]. The protocol has grown steadily since 2023 and maintains healthy withdrawal liquidity.",
+    "citations": [
+      { "id": 1, "label": "MarginFi Yield Breakdown", "url": "https://app.marginfi.com" },
+      { "id": 2, "label": "Neodyme Audit Report", "url": "https://neodyme.io/audits" },
+      { "id": 3, "label": "MarginFi Incident Post-Mortem", "url": "https://docs.marginfi.com/security" }
+    ]
+  },
+  "jupiter-lend": {
+    "protocol_id": "jupiter-lend",
+    "generated_at": "2026-09-20T07:45:00Z",
+    "explanation": "Jupiter Lend scores 64 out of 100—acceptable but with meaningful caution flags. The most significant issue is its high emissions share: 55% of the headline 11.4% APY comes from JUP token rewards [1]. If JUP token prices decline, the realized yield could drop substantially from its already-lower 4.9% 30-day realized figure. The protocol also lacks a completed external security audit as of this writing [2], which increases smart-contract uncertainty. TVL has been volatile, fluctuating by over 30% in the past 30 days [3]. These factors make it more suitable for risk-tolerant depositors.",
+    "citations": [
+      { "id": 1, "label": "Jupiter Lend Incentives Program", "url": "https://jup.ag/lend" },
+      { "id": 2, "label": "Jupiter Security Page", "url": "https://docs.jup.ag/security" },
+      { "id": 3, "label": "Jupiter Lend TVL (DeFiLlama)", "url": "https://defillama.com/protocol/jupiter-lend" }
+    ]
+  },
+  "jito": {
+    "protocol_id": "jito",
+    "generated_at": "2026-09-20T08:35:00Z",
+    "explanation": "Jito earns an 88 risk score, the second highest in our coverage universe. As a liquid staking protocol, its yield comes from real economic activity: Solana staking rewards boosted by MEV (Maximal Extractable Value) capture [1]. With $2.1B in TVL and multiple completed audits from Neodyme and OtterSec [2], the protocol has strong structural foundations. The JitoSOL token has excellent market liquidity across major Solana DEXs, providing fast exit options. The primary risk is Solana network-level—staking rewards and MEV income vary with network activity [3].",
+    "citations": [
+      { "id": 1, "label": "Jito MEV Documentation", "url": "https://docs.jito.wtf" },
+      { "id": 2, "label": "Jito Security Audits", "url": "https://jito.network/security" },
+      { "id": 3, "label": "Jito TVL Data (DeFiLlama)", "url": "https://defillama.com/protocol/jito" }
+    ]
+  },
+  "marinade": {
+    "protocol_id": "marinade",
+    "generated_at": "2026-09-20T08:20:00Z",
+    "explanation": "Marinade Finance achieves the highest risk score in our coverage at 91, reflecting its exceptional track record. It is the oldest Solana liquid staking protocol (launched 2021) with over three years of uninterrupted operation and zero material incidents [1]. Four separate security audits have been completed, and an active bug bounty program provides ongoing security coverage [2]. The yield is almost entirely derived from on-chain staking economics (95%) with minimal token emission dependency [3]. The main structural nuance: unstaking via the epoch mechanism takes 2-3 days, though instant swap via DEX is available.",
+    "citations": [
+      { "id": 1, "label": "Marinade Protocol History", "url": "https://docs.marinade.finance" },
+      { "id": 2, "label": "Marinade Bug Bounty Program", "url": "https://marinade.finance/security" },
+      { "id": 3, "label": "Marinade TVL & Yield (DeFiLlama)", "url": "https://defillama.com/protocol/marinade-finance" }
+    ]
+  },
+  "save": {
+    "protocol_id": "save",
+    "generated_at": "2026-09-20T06:00:00Z",
+    "explanation": "Save (formerly Solend) scores 56 out of 100, landing in the elevated-risk band. The most critical flag is yield source: 72% of its advertised 14.7% APY comes from SLND token emissions rather than real lending interest [1]. The true underlying yield is closer to 3.9% as shown in our 30-day realized figure. The last external security audit was in 2022, and the codebase has evolved significantly since then without a new comprehensive audit [2]. TVL has declined over 60% from its 2022 peak, which can affect withdrawal liquidity during stress periods [3]. A 2022 incident where a large whale account caused protocol stress was resolved, but demonstrates real risk under tail scenarios.",
+    "citations": [
+      { "id": 1, "label": "Save (Solend) Emissions Schedule", "url": "https://docs.save.finance/rewards" },
+      { "id": 2, "label": "Solend Audit Report (2022)", "url": "https://docs.save.finance/security" },
+      { "id": 3, "label": "Save TVL History (DeFiLlama)", "url": "https://defillama.com/protocol/save" }
+    ]
+  }
+}

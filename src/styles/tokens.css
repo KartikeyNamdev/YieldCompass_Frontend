@@ -1,0 +1,139 @@
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource-variable/inter";
+
+:root {
+  /* YieldCompass Design Tokens */
+  --bg-base: #050807;
+  --bg-elevated: #0A0F0D;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-strong: #0E1512;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #F3F6F4;
+  --text-secondary: #9AA7A0;
+  --text-muted: #74827B;
+  --accent: #34D399;
+  --accent-strong: #22C55E;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+  --accent-glow: rgba(34, 197, 94, 0.28);
+  --on-accent: #04120A;
+  --positive: #4ADE80;
+  --negative: #F87171;
+  --warning: #FBBF24;
+
+  /* Fonts */
+  --font-heading: 'Plus Jakarta Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: var(--font-body);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* Legacy & shadcn remapping */
+  --color-bg: var(--bg-base);
+  --color-card: var(--surface-strong);
+  --color-border: var(--border);
+  --color-text-primary: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-soft);
+  --color-accent-dark: var(--accent-strong);
+  --color-positive: var(--positive);
+  --color-positive-light: rgba(74, 222, 128, 0.12);
+  --color-negative: var(--negative);
+  --color-negative-light: rgba(248, 113, 113, 0.12);
+  --color-warning: var(--warning);
+  --color-warning-light: rgba(251, 191, 36, 0.12);
+
+  --background: var(--bg-base);
+  --foreground: var(--text);
+  --card: var(--surface-strong);
+  --card-foreground: var(--text);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text);
+  --primary: var(--accent);
+  --primary-foreground: var(--on-accent);
+  --secondary: var(--surface-strong);
+  --secondary-foreground: var(--text);
+  --muted: var(--surface-strong);
+  --muted-foreground: var(--text-muted);
+  --destructive: var(--negative);
+  --destructive-foreground: var(--text);
+  --input: var(--border);
+  --ring: var(--accent);
+  --radius: 20px;
+}
+
+/* Global color scheme and system styling */
+html {
+  color-scheme: dark;
+  background-color: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(52, 211, 153, 0.3);
+  color: #FFFFFF;
+}
+
+/* 2px green focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Thin dark scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 211, 153, 0.4);
+}
+
+/* Numbers tabular formatting */
+.tabular, [data-tabular="true"] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
