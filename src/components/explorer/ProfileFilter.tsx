@@ -29,8 +29,8 @@ export function ProfileFilter({ value, onChange }: ProfileFilterProps) {
   const selected = PROFILES.find((p) => p.id === value)
 
   return (
-    <div className="flex flex-col gap-2">
-      {/* Segmented control */}
+    <div className="flex flex-col items-start gap-2">
+      {/* Segmented control: sized to its content, not stretched across the page */}
       <div
         role="group"
         aria-label="Risk profile filter"
@@ -42,7 +42,7 @@ export function ProfileFilter({ value, onChange }: ProfileFilterProps) {
             id={`profile-${profile.id}`}
             onClick={() => onChange(profile.id)}
             aria-pressed={value === profile.id}
-            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-smooth ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-smooth focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] ${
               value === profile.id
                 ? 'bg-[var(--accent-soft)] text-[var(--accent)] ring-1 ring-[var(--accent)]/40'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text)]'
