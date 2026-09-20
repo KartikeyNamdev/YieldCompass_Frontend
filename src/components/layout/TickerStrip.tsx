@@ -2,19 +2,15 @@
 
 import { TrendingDown, TrendingUp } from 'lucide-react'
 
-// Seed ticker data (in real mode, would come from API)
-const TICKER_ITEMS = [
-  { protocol: 'Kamino', headline: 9.2, realized: 6.1 },
-  { protocol: 'MarginFi', headline: 7.8, realized: 6.9 },
-  { protocol: 'Jupiter Lend', headline: 11.4, realized: 4.9 },
-  { protocol: 'Jito', headline: 8.1, realized: 7.6 },
-  { protocol: 'Marinade', headline: 7.3, realized: 7.0 },
-  { protocol: 'Save', headline: 14.7, realized: 3.9 },
-]
+import { useProtocols } from '@/lib/hooks/useProtocols'
 
 export function TickerStrip() {
+  // Same data source as the explorer, so the ticker never disagrees with the table
+  const { data: pools = [] } = useProtocols('aggressive')
+  const items = pools.map((p) => ({ protocol: p.name.replace(/ \(sample\)$/, ''), headline: p.headlineApy, realized: p.realizedApy30d }))
+  if (items.length === 0) return null
   // Duplicate items so the ticker loops seamlessly
-  const allItems = [...TICKER_ITEMS, ...TICKER_ITEMS]
+  const allItems = [...items, ...items]
 
   return (
     <div
