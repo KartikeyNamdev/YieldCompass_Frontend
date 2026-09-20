@@ -74,6 +74,15 @@ export type HistoryResponse = z.infer<typeof HistoryResponseSchema>
 export const SeriesStatusSchema = z.enum(['open', 'active', 'settled', 'cancelled'])
 export type SeriesStatus = z.infer<typeof SeriesStatusSchema>
 
+export const SeriesAddressesSchema = z.object({
+  underlying_mint: z.string(),
+  senior_mint: z.string(),
+  junior_mint: z.string(),
+  vault: z.string(),
+  strategy_pool: z.string(),
+  risk_entry: z.string(),
+})
+
 export const SeriesSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -96,6 +105,11 @@ export const SeriesSchema = z.object({
   updated_at: z.string(),
   settled_at: z.string().optional(),
   realized_apy_bps: z.number().optional(),
+  senior_payout_usdc: z.number().optional(),
+  junior_payout_usdc: z.number().optional(),
+  /** on-chain addresses; present when the series comes from the live backend */
+  pubkey: z.string().optional(),
+  addresses: SeriesAddressesSchema.optional(),
 })
 export type Series = z.infer<typeof SeriesSchema>
 

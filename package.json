@@ -28,6 +28,7 @@
     "@radix-ui/react-tabs": "^1.1.9",
     "@radix-ui/react-toggle-group": "^1.1.7",
     "@radix-ui/react-tooltip": "^1.2.3",
+    "@solana/spl-token": "^0.4.15",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
@@ -36,6 +37,7 @@
     "@tanstack/react-query": "^5.75.0",
     "@tanstack/react-query-devtools": "^5.75.0",
     "@types/react-sparklines": "^1.7.5",
+    "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -59,6 +61,7 @@
     "@vitest/coverage-v8": "^3.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "puppeteer-core": "^25.11.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.0"
