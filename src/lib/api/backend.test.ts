@@ -67,6 +67,8 @@ describe('backend -> UI translation (real API responses)', () => {
       expect(settled.senior_deposited_usdc).toBe(100)
       expect(settled.junior_deposited_usdc).toBe(20)
       expect(settled.realized_apy_bps).toBe(600) // 6% period return on a short demo term
+      expect(settled.senior_payout_usdc).toBeCloseTo(100.000005, 6)
+      expect(settled.junior_payout_usdc).toBeCloseTo(27.199995, 6)
       expect(adaptSeries(settled).targetRatePct).toBe(2)
     }
   })

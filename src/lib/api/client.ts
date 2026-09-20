@@ -141,3 +141,29 @@ export async function getHealth() {
   const h = await apiFetch<{ status: string; updated_at: string }>('/health')
   return { status: h.status, timestamp: h.updated_at }
 }
+
+// ─── Faucet (devnet test tokens) ─────────────────────────────────────────────
+
+export interface FaucetResult {
+  signature: string
+  tokens: number
+  sol: number
+}
+
+export class FaucetCooldownError extends Error {
+  constructor(public retryAfterSecs: number) {
+    super('Faucet cooldown')
+  }
+}
+
+/** Asks the backend for devnet test tokens (and a little SOL for fees). One drip per address per cooldown. */
+export async function postFaucet(address: string): Promise<FaucetResult> {
+  if (DEMO_MODE) throw new Error('The faucet needs the live backend; demo mode is on.')
+  const res = await fetch(`${API_BASE}/v1/faucet`, { method: 'POST', headers: BASE_HEADERS, body: JSON.stringify({ address }) })
+  const json = (await res.json().catch(() => ({}))) as { message?: string; retry_after_secs?: number } & Partial<FaucetResult>
+  if (res.status === 429) throw new FaucetCooldownError(json.retry_after_secs ?? 3600)
+  if (!res.ok) throw new Error(json.message ?? 'The faucet is unavailable right now.')
+  return json as FaucetResult
+}
+
+export const isLiveBackend = !DEMO_MODE

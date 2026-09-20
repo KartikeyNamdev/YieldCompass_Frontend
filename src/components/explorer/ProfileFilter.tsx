@@ -34,7 +34,7 @@ export function ProfileFilter({ value, onChange }: ProfileFilterProps) {
       <div
         role="group"
         aria-label="Risk profile filter"
-        className="inline-flex bg-[#F1F5F9] rounded-xl p-1 gap-0.5"
+        className="inline-flex rounded-xl border border-[var(--border)] bg-white/5 p-1 gap-0.5"
       >
         {PROFILES.map((profile) => (
           <button
@@ -44,8 +44,8 @@ export function ProfileFilter({ value, onChange }: ProfileFilterProps) {
             aria-pressed={value === profile.id}
             className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-smooth ${
               value === profile.id
-                ? 'bg-white text-[var(--color-accent)] shadow-card'
-                : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+                ? 'bg-[var(--accent-soft)] text-[var(--accent)] ring-1 ring-[var(--accent)]/40'
+                : 'text-[var(--text-secondary)] hover:text-[var(--text)]'
             }`}
           >
             {profile.label}

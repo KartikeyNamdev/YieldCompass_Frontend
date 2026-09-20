@@ -154,6 +154,10 @@ export interface SeriesDto {
   updatedAt: string
   settledAt?: string
   realizedApyBps?: number
+  seniorPayoutUsdc?: number
+  juniorPayoutUsdc?: number
+  pubkey?: string
+  addresses?: NonNullable<Series['addresses']>
   /** Derived */
   targetRatePct: number
   riskGatePassed: boolean
@@ -185,6 +189,10 @@ export function adaptSeries(raw: Series): SeriesDto {
     updatedAt: raw.updated_at,
     settledAt: raw.settled_at,
     realizedApyBps: raw.realized_apy_bps,
+    seniorPayoutUsdc: raw.senior_payout_usdc,
+    juniorPayoutUsdc: raw.junior_payout_usdc,
+    pubkey: raw.pubkey,
+    addresses: raw.addresses,
     targetRatePct: raw.target_rate_bps / 100,
     riskGatePassed,
     riskGateStale,

@@ -141,6 +141,8 @@ export function toHistory(h7: BackendHistory, h30: BackendHistory): HistoryRespo
 
 export interface BackendSeries {
   id: string
+  pubkey: string
+  addresses: NonNullable<Series['addresses']>
   status: 'open' | 'active' | 'settled' | 'cancelled'
   rate_bps: number
   term_secs: number
@@ -155,6 +157,8 @@ export interface BackendSeries {
   protocol_id: string | null
   risk_score: number | null
   risk_expires_at: string | null
+  senior_payout: string | null
+  junior_payout: string | null
   realized_period_return: number | null
   realized_apy: number | null
   settled_at: string | null
@@ -189,6 +193,11 @@ export function toSeries(s: BackendSeries): Series {
     risk_score_expires_at: s.risk_expires_at ?? new Date(0).toISOString(),
     created_at: s.created_at,
     updated_at: s.updated_at,
+    pubkey: s.pubkey,
+    addresses: s.addresses,
+    ...(s.senior_payout !== null && s.junior_payout !== null
+      ? { senior_payout_usdc: Number(s.senior_payout), junior_payout_usdc: Number(s.junior_payout) }
+      : {}),
     ...(s.settled_at ? { settled_at: s.settled_at } : {}),
     ...(s.status === 'settled' && realized !== null ? { realized_apy_bps: Math.round(realized * 10_000) } : {}),
   }

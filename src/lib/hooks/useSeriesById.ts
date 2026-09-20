@@ -6,7 +6,8 @@ export function useSeriesById(id: string) {
   return useQuery({
     queryKey: ['series', id],
     queryFn: () => getSeriesById(id),
-    staleTime: 60 * 1000,
+    staleTime: 10 * 1000,
+    refetchInterval: 10 * 1000,
     enabled: !!id,
   })
 }
